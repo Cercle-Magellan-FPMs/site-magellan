@@ -24,22 +24,20 @@ const links = [
 ---
 
 <footer
-  class="z-10 mt-6 bg-gradient-to-r from-primary to-secondary pt-1 text-sm text-white"
+  class="z-10 mt-6 bg-linear-to-r/srgb from-primary to-secondary pt-1 text-sm text-white"
   transition:animate="none"
 >
   <div class="bg-dark">
-    <div
-      class="container mx-auto flex flex-col gap-4 px-4 py-8 md:grid md:grid-cols-[repeat(3,_1fr)_auto]"
-    >
+    <div class="container mx-auto flex flex-col gap-4 px-4 py-8 md:grid md:grid-cols-[repeat(3,_1fr)_auto]">
       <div>
-        <h4 class="mb-4 mt-0 font-semibold">Réseaux sociaux</h4>
+        <h2 class="mb-4 mt-0 font-semibold">Réseaux sociaux</h2>
         <ul class="flex flex-col gap-2">
           <FooterLinks links={links} />
         </ul>
       </div>
       <div class="h-[2px] rounded-full bg-white md:hidden"></div>
       <div>
-        <h4 class="mb-4 mt-0 font-semibold">Comité Magellan 188</h4>
+        <h2 class="mb-4 mt-0 font-semibold">Comité Magellan 188</h2>
         <ul class="flex flex-col gap-2">
           <li>Théau Pauwels</li>
           <li>Auguste Cordier</li>
@@ -49,7 +47,7 @@ const links = [
       <div class="h-[2px] rounded-full bg-white md:hidden"></div>
 
       <div>
-        <h4 class="mb-4 mt-0 font-semibold">© Site développé par</h4>
+        <h2 class="mb-4 mt-0 font-semibold">© Site développé par</h2>
         <ul class="flex flex-col gap-2">
           <li>Hugo Lorenzoni</li>
         </ul>
@@ -58,6 +56,11 @@ const links = [
 
       <Image
         src={logoMagellan}
+        width={256}
+        widths={[256, 512]}
+        sizes="256px"
+        format="webp"
+        loading="lazy"
         alt="Logo Cercle Magellan FPMs"
         class="max-w-64"
       />

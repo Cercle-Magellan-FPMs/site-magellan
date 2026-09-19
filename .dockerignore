@@ -1,0 +1,14 @@
+.git
+.github
+.astro
+.nginx
+node_modules
+dist
+.env*
+*.log
+.vscode
+.idea
+.codex
+.agents
+docs
+README.md

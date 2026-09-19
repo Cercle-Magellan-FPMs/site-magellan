@@ -24,17 +24,19 @@ const comité = {
   <main class="space-y-6">
     <section class="relative h-[calc(100vh-100px)] md:h-[60vh]">
       <Image
-        class="-z-10 h-full object-cover"
+        class="-z-10 h-full w-full object-cover"
         src={heroImage}
         alt="Ambiance au Game"
-        quality={30}
+        quality={50}
+        widths={[640, 960, 1280, 1920]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
         width={1920}
         height={1280}
         format="webp"
       />
-      <div
-        class="container absolute inset-0 mx-auto flex items-end px-4 py-16 md:items-center"
-      >
+      <div class="container absolute inset-0 mx-auto flex items-end px-4 py-16 md:items-center">
         <div class="w-5/6 space-y-6 text-lg drop-shadow-normal md:w-1/2">
           <h1 class="text-4xl font-bold">
             Le Cercle informatique de la Faculté Polytechnique de Mons
@@ -49,9 +51,7 @@ const comité = {
         </div>
       </div>
     </section>
-    <section
-      class="container mx-auto grid grid-cols-1 gap-6 space-y-4 px-4 md:grid-cols-[1fr_max-content]"
-    >
+    <section class="container mx-auto grid grid-cols-1 gap-6 [&>*+*]:mt-4 px-4 md:grid-cols-[1fr_max-content]">
       <div class="flex items-center">
         <div class="space-y-6">
           <h2 class="text-3xl font-bold">Nos services</h2>
@@ -81,22 +81,22 @@ const comité = {
         </div>
       </div>
       <ul class="grid grid-cols-1 justify-around gap-4 text-primary">
-        <li
-          class="flex flex-col items-center justify-center gap-8 rounded-2xl border-4 border-primary p-8 font-semibold sm:flex-row sm:gap-16 md:inline-flex md:gap-4 md:p-4"
-        >
-          <span class="flex w-48 items-center md:size-24"><Network /></span>
+        <li class="flex flex-col items-center justify-center gap-8 rounded-2xl border-4 border-primary p-8 font-semibold sm:flex-row sm:gap-16 md:inline-flex md:gap-4 md:p-4">
+          <span class="flex w-48 items-center md:size-24">
+            <Network />
+          </span>
           <h3 class="text-xl text-white">Infrastucture réseau</h3>
         </li>
-        <li
-          class="flex flex-col items-center justify-center gap-8 rounded-2xl border-4 border-primary p-8 font-semibold sm:flex-row sm:gap-16 md:inline-flex md:gap-4 md:p-4"
-        >
-          <span class="flex w-48 items-center md:size-24"><PC /></span>
+        <li class="flex flex-col items-center justify-center gap-8 rounded-2xl border-4 border-primary p-8 font-semibold sm:flex-row sm:gap-16 md:inline-flex md:gap-4 md:p-4">
+          <span class="flex w-48 items-center md:size-24">
+            <PC />
+          </span>
           <h3 class="text-xl text-white">PC en libre accès*</h3>
         </li>
-        <li
-          class="flex flex-col items-center justify-center gap-8 rounded-2xl border-4 border-primary p-8 font-semibold sm:flex-row sm:gap-16 md:inline-flex md:gap-4 md:p-4"
-        >
-          <span class="flex w-48 items-center md:size-24"><Web /></span>
+        <li class="flex flex-col items-center justify-center gap-8 rounded-2xl border-4 border-primary p-8 font-semibold sm:flex-row sm:gap-16 md:inline-flex md:gap-4 md:p-4">
+          <span class="flex w-48 items-center md:size-24">
+            <Web />
+          </span>
           <h3 class="text-xl text-white">Hébergement web</h3>
         </li>
       </ul>
@@ -105,9 +105,7 @@ const comité = {
       <h2 class="text-3xl font-bold">Notre comité</h2>
       <div class="overflow-hidden rounded-lg md:flex">
         <div class="w-full bg-primary pl-1 pr-1 pt-1 sm:w-auto md:pb-1 md:pr-0">
-          <div
-            class="flex h-full w-full flex-col justify-center space-y-2 bg-dark p-16"
-          >
+          <div class="flex h-full w-full flex-col justify-center space-y-2 bg-dark p-16">
             <h2 class="mx-auto max-w-fit text-2xl font-semibold">
               Comité {comité.promo}
             </h2>
@@ -131,6 +129,10 @@ const comité = {
           <Image
             class="h-full w-full object-cover"
             src={comité.imageComite}
+            width={1280}
+            widths={[320, 640, 960, 1280, 1920]}
+            sizes="(min-width: 1536px) 1150px, (min-width: 1280px) 890px, (min-width: 1024px) 640px, (min-width: 768px) 380px, (min-width: 640px) 608px, calc(100vw - 32px)"
+            loading="lazy"
             alt={`Comité ${comité.promo}`}
             quality={30}
             format="webp"

@@ -1,4 +1,39 @@
-@tailwind base;
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #42e1dd;
+  --color-secondary: #52dfae;
+  --color-dark: #00040b;
+  --color-blue-900: #1e3a8a;
+  --default-font-family: "Poppins", sans-serif;
+  --drop-shadow-md: 0 4px 3px rgb(0 0 0 / 0.07), 0 2px 2px rgb(0 0 0 / 0.06);
+  --drop-shadow-normal:
+    0 1px 2px rgb(0 0 0), 0 1px 8px rgb(0 0 0 / 0.8), 0 0 12px rgb(0 0 0 / 0.5);
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins-semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @layer base {
   p {
@@ -13,9 +48,6 @@
     @apply text-balance;
   }
 }
-
-@tailwind components;
-@tailwind utilities;
 
 /* width */
 ::-webkit-scrollbar {

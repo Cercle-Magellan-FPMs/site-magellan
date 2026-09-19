@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://magellan.fpms.ac.be/sitemap-index.xml

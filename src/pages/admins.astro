@@ -5,12 +5,18 @@ import { Image } from "astro:assets";
 ---
 
 <Layout title="Admins">
-  <main class="container mx-auto mt-6 space-y-6 px-4">
+  <main class="container mx-auto mt-6 [&>*+*]:mt-6 px-4">
     <h1 class="text-3xl font-bold">Admins Magellan</h1>
     <div class="float-right pb-6 lg:w-1/2 lg:pl-6">
       <Image
         class="rounded-lg border-4 border-primary"
         src={imageAdmins}
+        width={1280}
+        widths={[320, 640, 960, 1280, 1536]}
+        sizes="(min-width: 1536px) 728px, (min-width: 1280px) 600px, (min-width: 1024px) 472px, (min-width: 768px) 736px, (min-width: 640px) 608px, calc(100vw - 32px)"
+        format="webp"
+        quality={70}
+        loading="eager"
         alt="Admins Magellan"
       />
     </div>

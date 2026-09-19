@@ -2,8 +2,7 @@
 import Footer from "@components/Footer.astro";
 import Nav from "@components/Nav.astro";
 
-import { ViewTransitions } from "astro:transitions";
-import { AstroFont } from "astro-font";
+import { ClientRouter } from "astro:transitions";
 
 import "@styles/base.css";
 
@@ -22,9 +21,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   class="scroll-p-24 scroll-smooth bg-dark text-white lg:scroll-p-[8.5rem]"
 >
   <head>
-    <!-- <meta charset="utf-8" /> -->
-    <meta content="utf-8" http-equiv="encoding" />
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
     <meta
       name="title"
       content="Site du Cercle Magellan - Cercle informatique de la Faculté polytechnique de Mons (F.P.Ms)"
@@ -33,28 +30,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       name="description"
       content="Bienvenue sur le site du Cercle Magellan, le Cercle informatique de la Faculté polytechnique de Mons (F.P.Ms). Découvrez nos activités, nos services et notre équipe !"
     />
-    <meta name="author" content="Comité Magellan 186" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Cercle Magellan" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonicalURL} />
     <title>Cercle Magellan{title === "Accueil" ? "" : ` | ${title}`}</title>
-    <ViewTransitions />
+    <ClientRouter />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <AstroFont
-      config={[
-        {
-          src: [],
-          name: "Poppins",
-          // Google Fonts URL
-          googleFontsURL:
-            "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap",
-          preload: true,
-          display: "swap",
-          selector: "body",
-          fallback: "sans-serif",
-        },
-      ]}
+    <link
+      rel="preload"
+      href="/fonts/poppins-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
   </head>
   <body class="antialiased" transition:animate="fade">

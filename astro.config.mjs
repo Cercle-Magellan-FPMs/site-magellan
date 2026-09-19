@@ -1,17 +1,12 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
+import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
 
-import robotsTxt from "astro-robots-txt";
-
-// https://astro.build/config
 export default defineConfig({
-  integrations: [
-    tailwind({
-      // Example: Disable injecting a basic `base.css` import on every page.
-      // Useful if you need to define and/or import your own custom `base.css`.
-      applyBaseStyles: false,
-    }),
-    robotsTxt(),
-  ],
   site: "https://magellan.fpms.ac.be",
+  // Preserve the pre-v7 whitespace between inline elements.
+  compressHTML: true,
+  integrations: [sitemap()],
+  vite: { plugins: [tailwindcss()] },
+  build: { inlineStylesheets: "never" },
 });
